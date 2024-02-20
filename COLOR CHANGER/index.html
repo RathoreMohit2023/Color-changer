@@ -1,0 +1,55 @@
+<!-- Build A Project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COlor changer in dom</title>
+    <style>
+        body{
+            /* background-color: #414141; */
+            /* color: antiquewhite; */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #button{
+            padding: 16px;
+            font-family: monospace;
+            font-size: larger;
+            border-radius: 25px;
+            background-color: #808080;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="button">press me to change</button>
+    
+    
+    <script>
+        const btn = document.getElementById("button")
+        const randomcolor = () =>{
+            let value = "0123456789ABCDEF";
+            let symbol = "#";
+    
+            for (let i = 0; i < 6; i++) {
+              symbol = symbol + value[Math.floor(Math.random() * 16)];
+            }
+            return symbol;
+        }
+        console.log(randomcolor());
+    
+        function changerandomcolor(){
+            document.body.style.backgroundColor = randomcolor()
+        }
+        // btn.addEventListener("click", changerandomcolor)
+        btn.addEventListener("click", changerandomcolor)
+    </script>
+
+</body>
+
+
+</html>
